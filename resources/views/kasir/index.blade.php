@@ -387,8 +387,8 @@
 
                 strukContent.innerHTML = `
             <div class="text-center mb-3">
-                <h4>TOKO POS</h4>
-                <p class="mb-1">Jl. Contoh No. 123</p>
+                <h4>STTR POS</h4>
+                <p class="mb-1">Jl. Raya Cepu No. 123</p>
                 <p>Telp: 0812-3456-7890</p>
             </div>
             <hr>
