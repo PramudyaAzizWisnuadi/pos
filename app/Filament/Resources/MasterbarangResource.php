@@ -25,6 +25,9 @@ class MasterbarangResource extends Resource
     protected static ?string $model = Masterbarang::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $pluralModelLabel = 'Data Barang';
+
+    protected static ?string $navigationLabel = 'Data Barang';
 
     public static function form(Form $form): Form
     {
