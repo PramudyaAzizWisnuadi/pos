@@ -41,7 +41,7 @@ class PenjualanResource extends Resource
                     ->searchable(),
                 TextColumn::make('tanggal_transaksi')
                     ->label('Tanggal')
-                    ->dateTime('d/m/Y H:i')
+                    ->dateTime('d/m/Y')
                     ->sortable(),
                 TextColumn::make('total_harga')
                     ->label('Total Harga')

@@ -220,14 +220,14 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <h6><i class="fas fa-store"></i> Informasi Toko</h6>
-                                    <p class="mb-1">TOKO POS</p>
-                                    <p class="mb-1">Jl. Contoh No. 123</p>
+                                    <p class="mb-1">STTR POS</p>
+                                    <p class="mb-1">Jl. Raya Cepu No. 123, Blora</p>
                                     <p class="mb-0">Telp: 0812-3456-7890</p>
                                 </div>
                                 <div class="col-md-6 text-md-end">
                                     <h6><i class="fas fa-clock"></i> Waktu Transaksi</h6>
-                                    <p class="mb-1">Dibuat: {{ $penjualan->created_at->format('d F Y, H:i') }}</p>
-                                    <p class="mb-0">Dilihat: {{ now()->format('d F Y, H:i') }}</p>
+                                    <p class="mb-1">Dibuat: {{ $penjualan->created_at->format('d F Y') }}</p>
+                                    <p class="mb-0">Dilihat: {{ now()->format('d F Y') }}</p>
                                 </div>
                             </div>
                         </div>
