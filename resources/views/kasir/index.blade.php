@@ -82,18 +82,19 @@
                             <div class="row" id="produk-grid">
                                 @foreach ($barangs as $barang)
                                     <div class="col-md-3 mb-3 produk-item" data-kategori="{{ $barang->kategori_id }}">
-                                        <div class="card h-100 produk-card" style="cursor: pointer;"
-                                            data-id="{{ $barang->id }}" data-nama="{{ $barang->nama }}"
-                                            data-harga="{{ $barang->harga }}" data-stok="{{ $barang->stok }}">
+                                        <div class="card h-100 produk-card {{ $barang->stok <= 0 ? 'stok-habis' : '' }}"
+                                            style="cursor: pointer;" data-id="{{ $barang->id }}"
+                                            data-nama="{{ $barang->nama }}" data-harga="{{ $barang->harga }}"
+                                            data-stok="{{ $barang->stok }}">
                                             <div class="card-body text-center p-2">
                                                 <div class="product-image-container mb-2">
                                                     @if ($barang->foto)
                                                         <img src="{{ asset('storage/' . $barang->foto) }}"
-                                                            class="product-image" alt="{{ $barang->nama }}">
+                                                            class="product-image" alt="{{ $barang->nama }}"
+                                                            onerror="this.src='https://via.placeholder.com/150x120/e9ecef/6c757d?text=No+Image'">
                                                     @else
-                                                        <div class="product-image-placeholder">
-                                                            <i class="fas fa-image fa-2x text-muted"></i>
-                                                        </div>
+                                                        <img src="https://via.placeholder.com/150x120/e9ecef/6c757d?text=No+Image"
+                                                            class="product-image" alt="No Image">
                                                     @endif
                                                 </div>
                                                 <h6 class="card-title mb-1" style="font-size: 0.9rem;">
@@ -104,6 +105,8 @@
                                                 </p>
                                                 @if ($barang->stok <= 0)
                                                     <small class="text-danger">Stok Habis</small>
+                                                @else
+                                                    <small class="text-muted">Stok: {{ $barang->stok }}</small>
                                                 @endif
                                             </div>
                                         </div>

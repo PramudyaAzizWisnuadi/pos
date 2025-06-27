@@ -78,12 +78,11 @@ class MasterbarangResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                ExportAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
-                    ExportAction::make(),
+
                 ]),
             ]);
     }
