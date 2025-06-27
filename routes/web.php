@@ -6,7 +6,7 @@ use App\Http\Controllers\StrukController;
 use App\Http\Controllers\PenjualanController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('kasir.index');
 });
 Route::get('/kasir', [KasirController::class, 'index'])->name('kasir.index');
 Route::get('/kasir/barang/{kategoriId}', [KasirController::class, 'getBarangByKategori']);
