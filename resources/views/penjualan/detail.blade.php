@@ -5,6 +5,18 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Detail Transaksi - {{ $penjualan->kode_transaksi }}</title>
+        <!-- Favicon dinamis berdasarkan logo toko -->
+        @if (setting_toko('logo'))
+            <link rel="icon" type="image/png" href="{{ asset('storage/' . setting_toko('logo')) }}">
+            <link rel="shortcut icon" type="image/png" href="{{ asset('storage/' . setting_toko('logo')) }}">
+            <link rel="apple-touch-icon" href="{{ asset('storage/' . setting_toko('logo')) }}">
+        @else
+            <!-- Favicon default jika tidak ada logo -->
+            <link rel="icon" type="image/svg+xml"
+                href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+            <link rel="shortcut icon" type="image/svg+xml"
+                href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+        @endif
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
         <style>
@@ -220,9 +232,9 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <h6><i class="fas fa-store"></i> Informasi Toko</h6>
-                                    <p class="mb-1">STTR POS</p>
-                                    <p class="mb-1">Jl. Raya Cepu No. 123, Blora</p>
-                                    <p class="mb-0">Telp: 0812-3456-7890</p>
+                                    <p class="mb-1">{{ setting_toko('nama_toko') ?: config('app.name') }}</p>
+                                    <p class="mb-1">{{ setting_toko('alamat') ?: 'Alamat tidak tersedia' }}</p>
+                                    <p class="mb-0">{{ setting_toko('telepon') ?: '-' }}</p>
                                 </div>
                                 <div class="col-md-6 text-md-end">
                                     <h6><i class="fas fa-clock"></i> Waktu Transaksi</h6>

@@ -223,10 +223,12 @@
         <div class="struk">
             <!-- Header Toko -->
             <div class="header">
-                <h2>{{ config('app.name') }}</h2>
-                <p>Jl. Raya Cepu No. 123, Blora</p>
-                <p>Telp: 0812-3456-7890</p>
-                <p>Email: info@sttr.com</p>
+                <h2>{{ setting_toko('nama_toko') ?: 'TOKO POS' }}</h2>
+                <p>{{ setting_toko('alamat') ?: 'Alamat tidak tersedia' }}</p>
+                <p>Telp: {{ setting_toko('telepon') ?: '-' }}</p>
+                @if (setting_toko('email'))
+                    <p>Email: {{ setting_toko('email') }}</p>
+                @endif
             </div>
 
             <!-- Info Transaksi -->
